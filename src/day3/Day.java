@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package day2;
-//日期类第二版
+package day3;
+//日期类第三版
 /**
  *
  * @author qas87
  */
 public class Day {
-    private int year;
-    private int month;
-    private int date;
+    private int year = 1;
+    private int month = 1;
+    private int date = 1;
     
     //构造函数
-    public Day(){ set(1,1,1); }
-    public Day(int year){ set(year,1,1); }
-    public Day(int year, int month){ set(year,month,1); }
-    public Day(int year, int month, int date){ set( year,month,date); }
-    public Day(Day d){ set( d.year, d.month, d.date); }
+    public Day(){}
+    public Day(int year){ if (year == 0) year = 1; this.year = year; }
+    public Day(int year, int month){ this(year); this.month = month;}
+    public Day(int year, int month, int date){ this(year,month); this.date = date;}
+    public Day(Day d){this(d.year,d.month,d.date);}
     
     //获取年月日
     public int getYear(){return year;}
